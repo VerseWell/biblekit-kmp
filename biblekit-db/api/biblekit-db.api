@@ -1,0 +1,92 @@
+public abstract interface class com/aarkaystudio/biblekitdb/BibleDatabase : app/cash/sqldelight/Transacter {
+	public static final field Companion Lcom/aarkaystudio/biblekitdb/BibleDatabase$Companion;
+	public abstract fun getDatabaseQueries ()Lcom/aarkaystudio/biblekitdb/DatabaseQueries;
+}
+
+public final class com/aarkaystudio/biblekitdb/BibleDatabase$Companion {
+	public final fun getSchema ()Lapp/cash/sqldelight/db/SqlSchema;
+	public final fun invoke (Lapp/cash/sqldelight/db/SqlDriver;)Lcom/aarkaystudio/biblekitdb/BibleDatabase;
+}
+
+public final class com/aarkaystudio/biblekitdb/BibleDatabaseKt {
+	public static final fun createDatabase (Lcom/aarkaystudio/biblekitdb/DriverFactory;ZLkotlin/jvm/functions/Function0;)Lcom/aarkaystudio/biblekitdb/BibleDatabase;
+}
+
+public final class com/aarkaystudio/biblekitdb/BibleStoreProvider {
+	public static final field Companion Lcom/aarkaystudio/biblekitdb/BibleStoreProvider$Companion;
+	public fun <init> (Lcom/aarkaystudio/biblekitdb/VerseRepository;)V
+	public final fun getVerses (Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getVersesInRange (Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun searchVerses (Ljava/lang/String;Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun searchVersesInRange (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/aarkaystudio/biblekitdb/BibleStoreProvider$Companion {
+	public final fun create (Lcom/aarkaystudio/biblekitdb/BibleDatabase;)Lcom/aarkaystudio/biblekitdb/BibleStoreProvider;
+}
+
+public final class com/aarkaystudio/biblekitdb/DatabaseQueries : app/cash/sqldelight/TransacterImpl {
+	public fun <init> (Lapp/cash/sqldelight/db/SqlDriver;)V
+	public final fun getAllVersesByIDs (Ljava/util/Collection;JJ)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesByIDs (Ljava/util/Collection;JJLkotlin/jvm/functions/Function4;)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesByIDsAndText (Ljava/util/Collection;Ljava/lang/String;JJ)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesByIDsAndText (Ljava/util/Collection;Ljava/lang/String;JJLkotlin/jvm/functions/Function4;)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesByText (Ljava/lang/String;JJ)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesByText (Ljava/lang/String;JJLkotlin/jvm/functions/Function4;)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesInRange (JJJJ)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesInRange (JJJJLkotlin/jvm/functions/Function4;)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesInRangeAndText (JJLjava/lang/String;JJ)Lapp/cash/sqldelight/Query;
+	public final fun getAllVersesInRangeAndText (JJLjava/lang/String;JJLkotlin/jvm/functions/Function4;)Lapp/cash/sqldelight/Query;
+	public final fun insertVerse (Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lapp/cash/sqldelight/db/QueryResult;
+}
+
+public final class com/aarkaystudio/biblekitdb/DriverFactory {
+	public fun <init> (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)V
+	public synthetic fun <init> (Landroid/content/Context;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun createDriver (Ljava/lang/String;ZLkotlin/jvm/functions/Function1;)Lapp/cash/sqldelight/db/SqlDriver;
+}
+
+public final class com/aarkaystudio/biblekitdb/Verse {
+	public fun <init> (JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()J
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/aarkaystudio/biblekitdb/Verse;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekitdb/Verse;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/aarkaystudio/biblekitdb/Verse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()J
+	public final fun getNumber ()Ljava/lang/String;
+	public final fun getSearchText ()Ljava/lang/String;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekitdb/VerseEntity {
+	public static final field Companion Lcom/aarkaystudio/biblekitdb/VerseEntity$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lcom/aarkaystudio/biblekitdb/VerseEntity;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekitdb/VerseEntity;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/aarkaystudio/biblekitdb/VerseEntity;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Ljava/lang/String;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekitdb/VerseEntity$Companion {
+	public final fun sortKey (Ljava/lang/String;)J
+}
+
+public abstract interface class com/aarkaystudio/biblekitdb/VerseRepository {
+	public abstract fun getVersesByIds (Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun getVersesInRange (Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun insertAll (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun searchVerses (Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun searchVersesByIDs (Ljava/lang/String;Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun searchVersesInRange (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+

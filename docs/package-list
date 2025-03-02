@@ -1,0 +1,9 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:biblekit
+com.aarkaystudio.biblekit
+com.aarkaystudio.biblekit.data
+com.aarkaystudio.biblekit.model
+module:biblekit-db
+com.aarkaystudio.biblekitdb

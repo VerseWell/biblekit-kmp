@@ -1,0 +1,223 @@
+public final class com/aarkaystudio/biblekit/BibleDatabaseFactory {
+	public fun <init> (Landroid/content/Context;ZLkotlin/jvm/functions/Function0;)V
+	public final fun create ()Lcom/aarkaystudio/biblekitdb/BibleDatabase;
+}
+
+public final class com/aarkaystudio/biblekit/BibleProvider {
+	public static final field Companion Lcom/aarkaystudio/biblekit/BibleProvider$Companion;
+	public final fun book (Lcom/aarkaystudio/biblekit/model/Book;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun book$default (Lcom/aarkaystudio/biblekit/BibleProvider;Lcom/aarkaystudio/biblekit/model/Book;JJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun chapter (Lcom/aarkaystudio/biblekit/model/ChapterReference;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun chapter$default (Lcom/aarkaystudio/biblekit/BibleProvider;Lcom/aarkaystudio/biblekit/model/ChapterReference;JJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun search (Ljava/lang/String;Lcom/aarkaystudio/biblekit/model/Reference;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun search (Ljava/lang/String;Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun search$default (Lcom/aarkaystudio/biblekit/BibleProvider;Ljava/lang/String;Lcom/aarkaystudio/biblekit/model/Reference;JJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static synthetic fun search$default (Lcom/aarkaystudio/biblekit/BibleProvider;Ljava/lang/String;Ljava/util/List;JJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun verses (Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun verses$default (Lcom/aarkaystudio/biblekit/BibleProvider;Ljava/util/List;JJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class com/aarkaystudio/biblekit/BibleProvider$Companion {
+	public final fun create (Lcom/aarkaystudio/biblekit/BibleDatabaseFactory;)Lcom/aarkaystudio/biblekit/BibleProvider;
+}
+
+public final class com/aarkaystudio/biblekit/data/BookCollection {
+	public static final field Companion Lcom/aarkaystudio/biblekit/data/BookCollection$Companion;
+}
+
+public final class com/aarkaystudio/biblekit/data/BookCollection$Companion {
+	public final fun getAllBooks ()Ljava/util/List;
+	public final fun getMapping ()Ljava/util/Map;
+	public final fun getNewTestamentBooks ()Ljava/util/List;
+	public final fun getOldTestamentBooks ()Ljava/util/List;
+}
+
+public final class com/aarkaystudio/biblekit/data/BookName : java/lang/Enum {
+	public static final field Acts Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Amos Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Chronicles1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Chronicles2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Colossians Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Corinthians1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Corinthians2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Daniel Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Deuteronomy Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Ecclesiastes Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Ephesians Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Esther Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Exodus Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Ezekiel Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Ezra Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Galatians Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Genesis Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Habakkuk Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Haggai Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Hebrews Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Hosea Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Isaiah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field James Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Jeremiah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Job Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Joel Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field John Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field John1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field John2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field John3 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Jonah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Joshua Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Jude Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Judges Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Kings1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Kings2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Lamentations Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Leviticus Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Luke Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Malachi Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Mark Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Matthew Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Micah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Nahum Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Nehemiah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Numbers Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Obadiah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Peter1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Peter2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Philemon Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Philippians Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Proverbs Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Psalms Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Revelation Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Romans Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Ruth Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Samuel1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Samuel2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field SongOfSolomon Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Thessalonians1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Thessalonians2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Timothy1 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Timothy2 Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Titus Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Zechariah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static final field Zephaniah Lcom/aarkaystudio/biblekit/data/BookName;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getShortName ()Ljava/lang/String;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/aarkaystudio/biblekit/data/BookName;
+	public static fun values ()[Lcom/aarkaystudio/biblekit/data/BookName;
+}
+
+public final class com/aarkaystudio/biblekit/model/Book {
+	public final fun allVerseIDs ()Ljava/util/List;
+	public final fun allVerseIDs (I)Ljava/util/List;
+	public final fun component1 ()Lcom/aarkaystudio/biblekit/data/BookName;
+	public final fun component2 ()I
+	public final fun copy (Lcom/aarkaystudio/biblekit/data/BookName;ILjava/util/List;)Lcom/aarkaystudio/biblekit/model/Book;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/Book;Lcom/aarkaystudio/biblekit/data/BookName;ILjava/util/List;ILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/Book;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBookName ()Lcom/aarkaystudio/biblekit/data/BookName;
+	public final fun getTotalChapters ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public final fun totalVerses (I)I
+}
+
+public final class com/aarkaystudio/biblekit/model/ChapterReference {
+	public fun <init> (Lcom/aarkaystudio/biblekit/data/BookName;I)V
+	public final fun book ()Lcom/aarkaystudio/biblekit/model/Book;
+	public final fun component1 ()Lcom/aarkaystudio/biblekit/data/BookName;
+	public final fun copy (Lcom/aarkaystudio/biblekit/data/BookName;I)Lcom/aarkaystudio/biblekit/model/ChapterReference;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/ChapterReference;Lcom/aarkaystudio/biblekit/data/BookName;IILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/ChapterReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBookName ()Lcom/aarkaystudio/biblekit/data/BookName;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/Reference {
+	public static final field Companion Lcom/aarkaystudio/biblekit/model/Reference$Companion;
+	public fun <init> (Lcom/aarkaystudio/biblekit/model/VerseReference;Lcom/aarkaystudio/biblekit/model/VerseReference;)V
+	public final fun component1 ()Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public final fun component2 ()Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public final fun copy (Lcom/aarkaystudio/biblekit/model/VerseReference;Lcom/aarkaystudio/biblekit/model/VerseReference;)Lcom/aarkaystudio/biblekit/model/Reference;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/Reference;Lcom/aarkaystudio/biblekit/model/VerseReference;Lcom/aarkaystudio/biblekit/model/VerseReference;ILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/Reference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun fixup ()Lcom/aarkaystudio/biblekit/model/Reference;
+	public final fun getFrom ()Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public final fun getTo ()Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/Reference$Companion {
+	public final fun createWithBook (Lcom/aarkaystudio/biblekit/data/BookName;IIII)Lcom/aarkaystudio/biblekit/model/Reference;
+}
+
+public final class com/aarkaystudio/biblekit/model/SelectedVerseRange {
+	public static final field Companion Lcom/aarkaystudio/biblekit/model/SelectedVerseRange$Companion;
+	public final fun copy (IIIIII)Lcom/aarkaystudio/biblekit/model/SelectedVerseRange;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/SelectedVerseRange;IIIIIIILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/SelectedVerseRange;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/SelectedVerseRange$Companion {
+	public final fun shareTitle (Ljava/util/List;)Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/Verse {
+	public static final field Companion Lcom/aarkaystudio/biblekit/model/Verse$Companion;
+	public final fun component1 ()Lcom/aarkaystudio/biblekit/model/VerseID;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Lcom/aarkaystudio/biblekit/model/VerseID;Ljava/lang/String;)Lcom/aarkaystudio/biblekit/model/Verse;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/Verse;Lcom/aarkaystudio/biblekit/model/VerseID;Ljava/lang/String;ILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/Verse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()Lcom/aarkaystudio/biblekit/model/VerseID;
+	public final fun getText ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/Verse$Companion {
+	public final fun createShareText (Ljava/util/List;)Ljava/lang/String;
+	public final fun selectedVerseRange (Ljava/util/List;)Ljava/util/List;
+	public final fun shareVersesText (Ljava/util/List;)Ljava/util/List;
+}
+
+public final class com/aarkaystudio/biblekit/model/VerseID {
+	public static final field Companion Lcom/aarkaystudio/biblekit/model/VerseID$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public final fun bookChapterVerse ()Ljava/lang/String;
+	public final fun bookName ()Lcom/aarkaystudio/biblekit/data/BookName;
+	public final fun chapterVerse ()Ljava/lang/String;
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/aarkaystudio/biblekit/model/VerseID;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/VerseID;Ljava/lang/String;ILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/VerseID;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/aarkaystudio/biblekit/model/VerseID$Companion {
+	public final fun getEnd ()Lcom/aarkaystudio/biblekit/model/VerseID;
+	public final fun getStart ()Lcom/aarkaystudio/biblekit/model/VerseID;
+}
+
+public final class com/aarkaystudio/biblekit/model/VerseReference {
+	public static final field Companion Lcom/aarkaystudio/biblekit/model/VerseReference$Companion;
+	public fun <init> (Lcom/aarkaystudio/biblekit/model/ChapterReference;I)V
+	public final fun component1 ()Lcom/aarkaystudio/biblekit/model/ChapterReference;
+	public final fun copy (Lcom/aarkaystudio/biblekit/model/ChapterReference;I)Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/VerseReference;Lcom/aarkaystudio/biblekit/model/ChapterReference;IILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/VerseReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChapter ()Lcom/aarkaystudio/biblekit/model/ChapterReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public final fun verseID ()Lcom/aarkaystudio/biblekit/model/VerseID;
+}
+
+public final class com/aarkaystudio/biblekit/model/VerseReference$Companion {
+	public final fun fromVerseID (Ljava/lang/String;)Lcom/aarkaystudio/biblekit/model/VerseReference;
+}
+
