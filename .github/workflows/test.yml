@@ -2,13 +2,13 @@ name: Test
 
 on:
   push:
-    branches: [ main, ci ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main, develop]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true 
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'adopt'
+          distribution: "adopt"
           java-version: 17
 
       - name: Setup Gradle
@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: '**/build/reports/tests/**'
+          path: "**/build/reports/tests/**"
