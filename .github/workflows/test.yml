@@ -31,9 +31,15 @@ jobs:
       - name: Run tests
         run: ./gradlew assembleRelease check --stacktrace
 
-      - name: Archive Test Results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          name: test-results
-          path: "**/build/reports/tests/**"
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: "**/build/test-results/*/TEST-*.xml"
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./biblekit/build/reports/kover/reportRelease.xml
