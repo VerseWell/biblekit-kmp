@@ -52,9 +52,11 @@ If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a 
 
 ## Usage
 
-> **Important**: Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
+> [!IMPORTANT]
+> Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
 > - Example database file: [bible.db](androidApp/src/main/assets/bible.db) (World English Bible with [translation modifications](#bible-translation))
 > - Database schema: [database.sq](biblekit-db/src/commonMain/sqldelight/com/aarkaystudio/biblekitdb/database.sq)
+>
 > You can replace the `bible.db` file with your preferred translation as long as it follows the same database schema.
 
 ### Kotlin (Android)
