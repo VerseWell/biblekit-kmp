@@ -33,7 +33,7 @@ public data class VerseReference(
      * zero if they are equal, or a positive integer if this [VerseReference]
      * is greater than [to].
      */
-    internal operator fun compareTo(to: VerseReference): Int {
+    public operator fun compareTo(to: VerseReference): Int {
         // 1. Compare book names
         val bookComparison = chapter.bookName.compareTo(to.chapter.bookName)
         // If book names are different, return the comparison result
