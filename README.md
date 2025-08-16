@@ -42,7 +42,7 @@ dependencies: [
 ]
 ```
 
-## Alternative: Native Swift Library
+#### Alternative: Native Swift Library
 
 If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a dedicated Swift library alongside this one:
 
