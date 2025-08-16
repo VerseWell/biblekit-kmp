@@ -165,7 +165,7 @@ internal class VerseDataSource(
      *
      * @param verses The list of [VerseEntity] objects to insert
      */
-    override suspend fun insertAll(verses: List<VerseEntity>) {
+    override suspend fun insert(verses: List<VerseEntity>) {
         // Insert each verse with its key, ID, text, and searchable content
         verses.forEach {
             queries.insertVerse(
