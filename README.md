@@ -42,6 +42,14 @@ dependencies: [
 ]
 ```
 
+## Alternative: Native Swift Library
+
+If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a dedicated Swift library alongside this one:
+
+- **[BibleKit Swift](https://github.com/VerseWell/BibleKit-swift)** - A native Swift library for iOS/macOS developers who want the most idiomatic Swift APIs and experience for Apple platforms
+
+> As a Swift developer first, I am actively maintaining both libraries. This KMP version allows me to explore cross-platform development potential while providing a solution for teams that need Android support. Both libraries provide the same core functionality, so choose the one that best fits your project's architecture and team preferences.
+
 ## Usage
 
 > **Important**: Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
