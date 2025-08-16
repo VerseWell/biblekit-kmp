@@ -22,7 +22,7 @@ class BibleStoreSearchTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
 
             // Search for "waters" which appears in verses 2 and 6
@@ -52,7 +52,7 @@ class BibleStoreSearchTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
 
             // Search for "waters" within verses 1:1:1 to 1:1:5
@@ -82,7 +82,7 @@ class BibleStoreSearchTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.genesisVerses)
+            verseDataSource.insert(verses = TestData.genesisVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
             val ids =
                 listOf(
@@ -116,7 +116,7 @@ class BibleStoreSearchTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.genesisVerses)
+            verseDataSource.insert(verses = TestData.genesisVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
             val ids =
                 listOf(
@@ -151,7 +151,7 @@ class BibleStoreSearchTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.genesisVerses)
+            verseDataSource.insert(verses = TestData.genesisVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
             val ids = listOf("1:1:1", "1:1:2", "1:1:3")
 

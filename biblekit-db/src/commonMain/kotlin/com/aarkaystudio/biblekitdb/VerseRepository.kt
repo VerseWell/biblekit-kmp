@@ -69,7 +69,7 @@ public interface VerseRepository {
      *
      * @param verses The list of [VerseEntity] objects to insert.
      */
-    public suspend fun insertAll(verses: List<VerseEntity>)
+    public suspend fun insert(verses: List<VerseEntity>)
 
     /**
      * Returns a list of [VerseEntity] objects within the specified verse range.

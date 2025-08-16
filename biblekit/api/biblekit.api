@@ -207,6 +207,7 @@ public final class com/aarkaystudio/biblekit/model/VerseID$Companion {
 public final class com/aarkaystudio/biblekit/model/VerseReference {
 	public static final field Companion Lcom/aarkaystudio/biblekit/model/VerseReference$Companion;
 	public fun <init> (Lcom/aarkaystudio/biblekit/model/ChapterReference;I)V
+	public final fun compareTo (Lcom/aarkaystudio/biblekit/model/VerseReference;)I
 	public final fun component1 ()Lcom/aarkaystudio/biblekit/model/ChapterReference;
 	public final fun copy (Lcom/aarkaystudio/biblekit/model/ChapterReference;I)Lcom/aarkaystudio/biblekit/model/VerseReference;
 	public static synthetic fun copy$default (Lcom/aarkaystudio/biblekit/model/VerseReference;Lcom/aarkaystudio/biblekit/model/ChapterReference;IILjava/lang/Object;)Lcom/aarkaystudio/biblekit/model/VerseReference;

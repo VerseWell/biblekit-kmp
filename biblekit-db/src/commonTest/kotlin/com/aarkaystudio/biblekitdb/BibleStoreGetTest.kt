@@ -22,7 +22,7 @@ class BibleStoreGetTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
             val ids =
                 listOf(
@@ -55,7 +55,7 @@ class BibleStoreGetTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
             val ids =
                 listOf(
@@ -111,7 +111,7 @@ class BibleStoreGetTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
 
             val verses =
@@ -138,7 +138,7 @@ class BibleStoreGetTest {
         runTest {
             val db = BibleDatabase(testDbConnection())
             val verseDataSource = VerseDataSource(db = db)
-            verseDataSource.insertAll(TestData.allVerses)
+            verseDataSource.insert(verses = TestData.allVerses)
             val store = BibleStoreProvider(repository = verseDataSource)
 
             // Test with limit

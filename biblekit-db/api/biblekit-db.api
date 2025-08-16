@@ -84,7 +84,7 @@ public final class com/aarkaystudio/biblekitdb/VerseEntity$Companion {
 public abstract interface class com/aarkaystudio/biblekitdb/VerseRepository {
 	public abstract fun getVersesByIds (Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun getVersesInRange (Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun insertAll (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun insert (Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun searchVerses (Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun searchVersesByIDs (Ljava/lang/String;Ljava/util/List;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun searchVersesInRange (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
