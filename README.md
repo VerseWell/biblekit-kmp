@@ -1,8 +1,8 @@
 # BibleKit KMP
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-orange.svg?logo=kotlin)](https://kotlinlang.org/docs/multiplatform.html)
+[![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Documentation](https://img.shields.io/badge/docs-dokka-green)](https://versewell.github.io/biblekit-kmp)
 [![codecov](https://codecov.io/gh/VerseWell/biblekit-kmp/branch/main/graph/badge.svg)](https://codecov.io/gh/VerseWell/biblekit-kmp)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
@@ -28,7 +28,7 @@ BibleKit KMP is a Kotlin Multiplatform library that provides Bible-related funct
 
 ```kotlin
 dependencies {
-    implementation("com.aarkaystudio.biblekit:biblekit:0.1.0")
+    implementation("com.aarkaystudio.biblekit:biblekit:0.1.1")
 }
 ```
 
@@ -38,15 +38,25 @@ Add the following to your Package.swift file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.1.0")
+    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.1.1")
 ]
 ```
 
+#### Alternative: Native Swift Library
+
+If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a dedicated Swift library alongside this one:
+
+- **[BibleKit Swift](https://github.com/VerseWell/BibleKit-swift)** - A native Swift library for iOS/macOS developers who want the most idiomatic Swift APIs and experience for Apple platforms
+
+> As a Swift developer first, I am actively maintaining both libraries. This KMP version allows me to explore cross-platform development potential while providing a solution for teams that need Android support. Both libraries provide the same core functionality, so choose the one that best fits your project's architecture and team preferences.
+
 ## Usage
 
-> **Important**: Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
+> [!IMPORTANT]
+> Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
 > - Example database file: [bible.db](androidApp/src/main/assets/bible.db) (World English Bible with [translation modifications](#bible-translation))
 > - Database schema: [database.sq](biblekit-db/src/commonMain/sqldelight/com/aarkaystudio/biblekitdb/database.sq)
+>
 > You can replace the `bible.db` file with your preferred translation as long as it follows the same database schema.
 
 ### Kotlin (Android)

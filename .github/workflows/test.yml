@@ -2,17 +2,17 @@ name: Test
 
 on:
   push:
-    branches: [ main, ci ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main, develop]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true 
+  cancel-in-progress: true
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'adopt'
+          distribution: "adopt"
           java-version: 17
 
       - name: Setup Gradle
@@ -31,9 +31,12 @@ jobs:
       - name: Run tests
         run: ./gradlew assembleRelease check --stacktrace
 
-      - name: Archive Test Results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+      - name: Generate code coverage
+        run: ./gradlew koverXmlReportRelease
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          name: test-results
-          path: '**/build/reports/tests/**'
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./biblekit/build/reports/kover/reportRelease.xml

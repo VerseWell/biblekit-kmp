@@ -82,7 +82,7 @@ class MockVerseRepository : VerseRepository {
             .map { VerseEntity(id = it, text = "Verse text here..") }
     }
 
-    override suspend fun insertAll(verses: List<VerseEntity>) {
+    override suspend fun insert(verses: List<VerseEntity>) {
         TODO("Not yet implemented")
     }
 }

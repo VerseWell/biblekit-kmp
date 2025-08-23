@@ -12,9 +12,10 @@ plugins {
     alias(libs.plugins.skie).apply(false)
     alias(libs.plugins.serialization).apply(false)
     alias(libs.plugins.dokka)
+    alias(libs.plugins.vanniktech.mavenPublish).apply(false)
 }
 
 allprojects {
     group = "com.aarkaystudio.biblekit"
-    version = "0.1.0"
+    version = "0.1.1"
 }
