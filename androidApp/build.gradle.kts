@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.aarkaystudio.biblekitapp"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.aarkaystudio.biblekitapp"
