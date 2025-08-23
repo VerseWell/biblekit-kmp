@@ -87,7 +87,7 @@ sqldelight {
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.1.0")
+    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.1.1")
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()

@@ -29,8 +29,9 @@ let package = Package(
         // Binary target that downloads the XCFramework from GitHub releases
         .binaryTarget(
             name: "BibleKit",
-            url: "https://github.com/VerseWell/biblekit-kmp/releases/download/0.1.0/BibleKit.xcframework.zip",
-            checksum: "41fdac0001a8524d2fe222e6220740a9d151443060797a3776e1b07964b904d7"
+            url:
+                "https://github.com/VerseWell/biblekit-kmp/releases/download/0.1.1/BibleKit.xcframework.zip",
+            checksum: "9f5975bfe7df89fd5fdc867a201d6c757a9c7dbeff1770afa6929e8135cde446"
         )
     ]
 ) 
