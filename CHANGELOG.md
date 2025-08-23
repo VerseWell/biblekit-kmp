@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2025-08-23
+
+### Changed
+- Renamed `insertAll` to `insert` in VerseRepository for better API consistency
+- Made `compareTo` method public in VerseReference
+
+### Updated
+- Updated various dependencies to latest versions
+
 ## [0.1.0] - 2025-05-29
 
 - Initial commit
