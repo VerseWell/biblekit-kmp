@@ -1,8 +1,8 @@
 # BibleKit KMP
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-orange.svg?logo=kotlin)](https://kotlinlang.org/docs/multiplatform.html)
+[![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Documentation](https://img.shields.io/badge/docs-dokka-green)](https://versewell.github.io/biblekit-kmp)
 [![codecov](https://codecov.io/gh/VerseWell/biblekit-kmp/branch/main/graph/badge.svg)](https://codecov.io/gh/VerseWell/biblekit-kmp)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
