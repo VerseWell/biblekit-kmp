@@ -15,28 +15,48 @@ import kotlin.coroutines.resumeWithException
  */
 public expect class DriverFactory {
     /**
-     * Creates a platform-specific SQLite database driver.
+     * Creates a platform-specific SQLite database driver from assets/bundle.
+     * The database file will be copied from assets/bundle to a writable location.
      *
-     * @param name The name of the database file
+     * @param name The name of the database file in assets/bundle
      * @param replaceDatabase Whether to replace the existing database with a new one
      * @param completionHandler Callback to handle completion of driver creation
      * @return A platform-specific [SqlDriver] implementation
      */
+    @Deprecated(
+        message = "Use createDriver(filePath: String) instead to open databases directly without copying",
+        replaceWith = ReplaceWith("createDriver(filePath)"),
+        level = DeprecationLevel.WARNING,
+    )
     public fun createDriver(
         name: String?,
         replaceDatabase: Boolean,
         completionHandler: (Boolean) -> Unit,
     ): SqlDriver
+
+    /**
+     * Creates a platform-specific SQLite database driver from a direct file path.
+     * No copying occurs - the database is opened directly from the provided path in read-only mode.
+     *
+     * @param filePath The absolute file path to the database file
+     * @return A platform-specific [SqlDriver] implementation
+     */
+    public fun createDriver(filePath: String): SqlDriver
 }
 
 /**
- * Creates and initializes the Bible database.
+ * Creates and initializes the Bible database from assets/bundle.
  *
  * @param driverFactory Platform-specific factory for creating the database driver
  * @param replaceDatabase Whether to replace the existing database with a new one
  * @param completionHandler Callback that receives the new database version after successful creation
  * @return Initialized [BibleDatabase] instance
  */
+@Deprecated(
+    message = "Use createDatabase(filePath, driverFactory) instead to open databases directly without copying",
+    replaceWith = ReplaceWith("createDatabase(filePath, driverFactory)"),
+    level = DeprecationLevel.WARNING,
+)
 public fun createDatabase(
     driverFactory: DriverFactory,
     replaceDatabase: Boolean,
@@ -52,6 +72,23 @@ public fun createDatabase(
                 }
             },
         )
+    val database = BibleDatabase(driver)
+    return database
+}
+
+/**
+ * Creates and initializes the Bible database from a direct file path.
+ * No copying occurs - the database is opened directly from the provided path.
+ *
+ * @param filePath The absolute file path to the database file
+ * @param driverFactory Platform-specific factory for creating the database driver
+ * @return Initialized [BibleDatabase] instance
+ */
+public fun createDatabase(
+    filePath: String,
+    driverFactory: DriverFactory,
+): BibleDatabase {
+    val driver = driverFactory.createDriver(filePath = filePath)
     val database = BibleDatabase(driver)
     return database
 }

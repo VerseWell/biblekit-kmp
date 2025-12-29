@@ -14,11 +14,31 @@ import androidx.compose.ui.Modifier
 import com.aarkaystudio.biblekit.BibleDatabaseFactory
 import com.aarkaystudio.biblekit.BibleProvider
 import com.aarkaystudio.biblekitapp.ui.theme.biblekitappTheme
+import java.io.File
+import java.io.FileOutputStream
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Copy bible.db from assets to app directory if it doesn't exist
+        val dbFile = File(applicationContext.filesDir, "bible.db")
+        if (!dbFile.exists()) {
+            applicationContext.assets.open("bible.db").use { input ->
+                FileOutputStream(dbFile).use { output ->
+                    input.copyTo(output)
+                }
+            }
+        }
+
+        // Initialize BibleProvider with the new filePath API
+        val provider =
+            BibleProvider.create(
+                dbFactory = BibleDatabaseFactory(context = applicationContext),
+                filePath = dbFile.absolutePath,
+            )
+
         setContent {
             biblekitappTheme {
                 Surface {
@@ -30,17 +50,7 @@ class MainActivity : ComponentActivity() {
                                     .padding(innerPadding)
                                     .imePadding(),
                         ) {
-                            SearchScreen(
-                                provider =
-                                    BibleProvider.create(
-                                        dbFactory =
-                                            BibleDatabaseFactory(
-                                                context = applicationContext,
-                                                replaceDatabase = false,
-                                                completionHandler = {},
-                                            ),
-                                    ),
-                            )
+                            SearchScreen(provider = provider)
                         }
                     }
                 }

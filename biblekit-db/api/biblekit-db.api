@@ -10,6 +10,7 @@ public final class com/aarkaystudio/biblekitdb/BibleDatabase$Companion {
 
 public final class com/aarkaystudio/biblekitdb/BibleDatabaseKt {
 	public static final fun createDatabase (Lcom/aarkaystudio/biblekitdb/DriverFactory;ZLkotlin/jvm/functions/Function0;)Lcom/aarkaystudio/biblekitdb/BibleDatabase;
+	public static final fun createDatabase (Ljava/lang/String;Lcom/aarkaystudio/biblekitdb/DriverFactory;)Lcom/aarkaystudio/biblekitdb/BibleDatabase;
 }
 
 public final class com/aarkaystudio/biblekitdb/BibleStoreProvider {
@@ -43,6 +44,7 @@ public final class com/aarkaystudio/biblekitdb/DatabaseQueries : app/cash/sqldel
 public final class com/aarkaystudio/biblekitdb/DriverFactory {
 	public fun <init> (Landroid/content/Context;Lkotlin/jvm/functions/Function1;)V
 	public synthetic fun <init> (Landroid/content/Context;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun createDriver (Ljava/lang/String;)Lapp/cash/sqldelight/db/SqlDriver;
 	public final fun createDriver (Ljava/lang/String;ZLkotlin/jvm/functions/Function1;)Lapp/cash/sqldelight/db/SqlDriver;
 }
 

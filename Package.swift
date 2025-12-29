@@ -30,8 +30,8 @@ let package = Package(
         .binaryTarget(
             name: "BibleKit",
             url:
-                "https://github.com/VerseWell/biblekit-kmp/releases/download/0.1.1/BibleKit.xcframework.zip",
-            checksum: "9f5975bfe7df89fd5fdc867a201d6c757a9c7dbeff1770afa6929e8135cde446"
+                "https://github.com/VerseWell/biblekit-kmp/releases/download/0.1.2/BibleKit.xcframework.zip",
+            checksum: "4eac83e05be05b4b55f5867753cc2991bb74d98456c03e4cdbd729eb69d64712"
         )
     ]
 ) 

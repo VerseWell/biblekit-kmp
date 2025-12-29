@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-12-29
+
+### Added
+- Support for opening databases from direct file paths
+
+### Updated
+- Dependencies updated to latest versions
+
 ## [0.1.1] - 2025-08-23
 
 ### Changed

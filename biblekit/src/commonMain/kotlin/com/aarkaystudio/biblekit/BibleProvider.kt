@@ -5,6 +5,7 @@ import com.aarkaystudio.biblekit.model.ChapterReference
 import com.aarkaystudio.biblekit.model.Reference
 import com.aarkaystudio.biblekit.model.Verse
 import com.aarkaystudio.biblekit.model.VerseID
+import com.aarkaystudio.biblekitdb.BibleDatabase
 import com.aarkaystudio.biblekitdb.BibleStoreProvider
 
 /**
@@ -31,8 +32,29 @@ public class BibleProvider internal constructor(
          * @param dbFactory The [BibleDatabaseFactory] instance to use for data access
          * @return A new [BibleProvider] instance ready for use
          */
+        @Deprecated(
+            message = "Use create(database) instead with BibleDatabaseFactory.create(filePath) for direct file path access",
+            replaceWith = ReplaceWith("create(database)"),
+            level = DeprecationLevel.WARNING,
+        )
         public fun create(dbFactory: BibleDatabaseFactory): BibleProvider {
             val provider = BibleStoreProvider.create(db = dbFactory.create())
+            return BibleProvider(store = DefaultBibleStoreService(provider = provider))
+        }
+
+        /**
+         * Creates a new instance of [BibleProvider] with a default [BibleStoreService] implementation.
+         * This factory method sets up the database connection using the provided factory and file path.
+         *
+         * @param dbFactory The [BibleDatabaseFactory] instance to use for creating the database
+         * @param filePath The absolute path to the Bible database file
+         * @return A new [BibleProvider] instance ready for use
+         */
+        public fun create(
+            dbFactory: BibleDatabaseFactory,
+            filePath: String,
+        ): BibleProvider {
+            val provider = BibleStoreProvider.create(db = dbFactory.create(filePath))
             return BibleProvider(store = DefaultBibleStoreService(provider = provider))
         }
     }
