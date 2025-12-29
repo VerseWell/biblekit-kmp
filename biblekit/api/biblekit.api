@@ -1,6 +1,8 @@
 public final class com/aarkaystudio/biblekit/BibleDatabaseFactory {
+	public fun <init> (Landroid/content/Context;)V
 	public fun <init> (Landroid/content/Context;ZLkotlin/jvm/functions/Function0;)V
 	public final fun create ()Lcom/aarkaystudio/biblekitdb/BibleDatabase;
+	public final fun create (Ljava/lang/String;)Lcom/aarkaystudio/biblekitdb/BibleDatabase;
 }
 
 public final class com/aarkaystudio/biblekit/BibleProvider {
@@ -19,6 +21,7 @@ public final class com/aarkaystudio/biblekit/BibleProvider {
 
 public final class com/aarkaystudio/biblekit/BibleProvider$Companion {
 	public final fun create (Lcom/aarkaystudio/biblekit/BibleDatabaseFactory;)Lcom/aarkaystudio/biblekit/BibleProvider;
+	public final fun create (Lcom/aarkaystudio/biblekit/BibleDatabaseFactory;Ljava/lang/String;)Lcom/aarkaystudio/biblekit/BibleProvider;
 }
 
 public final class com/aarkaystudio/biblekit/data/BookCollection {
