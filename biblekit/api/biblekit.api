@@ -22,7 +22,6 @@ public final class com/aarkaystudio/biblekit/BibleProvider {
 public final class com/aarkaystudio/biblekit/BibleProvider$Companion {
 	public final fun create (Lcom/aarkaystudio/biblekit/BibleDatabaseFactory;)Lcom/aarkaystudio/biblekit/BibleProvider;
 	public final fun create (Lcom/aarkaystudio/biblekit/BibleDatabaseFactory;Ljava/lang/String;)Lcom/aarkaystudio/biblekit/BibleProvider;
-	public final fun create (Lcom/aarkaystudio/biblekitdb/BibleDatabase;)Lcom/aarkaystudio/biblekit/BibleProvider;
 }
 
 public final class com/aarkaystudio/biblekit/data/BookCollection {

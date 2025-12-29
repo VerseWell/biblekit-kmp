@@ -44,18 +44,6 @@ public class BibleProvider internal constructor(
 
         /**
          * Creates a new instance of [BibleProvider] with a default [BibleStoreService] implementation.
-         * This factory method takes a database instance directly.
-         *
-         * @param database The [BibleDatabase] instance to use for data access
-         * @return A new [BibleProvider] instance ready for use
-         */
-        public fun create(database: BibleDatabase): BibleProvider {
-            val provider = BibleStoreProvider.create(db = database)
-            return BibleProvider(store = DefaultBibleStoreService(provider = provider))
-        }
-
-        /**
-         * Creates a new instance of [BibleProvider] with a default [BibleStoreService] implementation.
          * This factory method sets up the database connection using the provided factory and file path.
          *
          * @param dbFactory The [BibleDatabaseFactory] instance to use for creating the database
