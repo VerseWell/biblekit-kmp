@@ -132,7 +132,10 @@ public actual class DriverFactory(
             if (lastSeparator != -1) {
                 filePath.substring(0, lastSeparator) to filePath.substring(lastSeparator + 1)
             } else {
-                null to filePath
+                throw IllegalArgumentException(
+                    "filePath must contain a directory path. Received: '$filePath'. " +
+                        "Use an absolute path like '/path/to/database.db'",
+                )
             }
 
         return LogSqliteDriver(
