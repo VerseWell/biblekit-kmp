@@ -62,10 +62,21 @@ If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a 
 ### Kotlin (Android)
 
 ```kotlin
-// Initialize from direct file path
-val factory = BibleDatabaseFactory(context = applicationContext)
-val database = factory.create(filePath = "/path/to/bible.db")
-val provider = BibleProvider.create(database = database)
+// Copy bible.db from assets to app directory if it doesn't exist
+val dbFile = File(applicationContext.filesDir, "bible.db")
+if (!dbFile.exists()) {
+    applicationContext.assets.open("bible.db").use { input ->
+        FileOutputStream(dbFile).use { output ->
+            input.copyTo(output)
+        }
+    }
+}
+
+// Initialize with the database file path
+val provider = BibleProvider.create(
+    dbFactory = BibleDatabaseFactory(context = applicationContext),
+    filePath = dbFile.absolutePath
+)
 
 // Search
 val results = provider.search(
@@ -77,10 +88,16 @@ val results = provider.search(
 ### Swift (iOS/macOS)
 
 ```swift
-// Initialize from direct file path
-let factory = BibleDatabaseFactory()
-let database = factory.create(filePath: "/path/to/bible.db")
-let provider = BibleProvider.create(database: database)
+// Get the bible.db path from the app bundle
+guard let dbPath = Bundle.main.path(forResource: "bible", ofType: "db") else {
+    fatalError("bible.db not found in bundle")
+}
+
+// Initialize with the database file path
+let provider = BibleProvider.companion.create(
+    dbFactory: BibleDatabaseFactory(),
+    filePath: dbPath
+)
 
 // Search
 let results = try await provider.search(
