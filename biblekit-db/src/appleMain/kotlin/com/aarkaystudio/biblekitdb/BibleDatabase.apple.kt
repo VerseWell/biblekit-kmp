@@ -22,13 +22,22 @@ import platform.Foundation.stringByAppendingPathComponent
 public actual class DriverFactory(
     private val logBlock: ((String) -> Unit)? = null,
 ) {
+    /**
+     * Creates a database driver from bundle.
+     * Copies the database from bundle to Application Support directory.
+     */
+    @Deprecated(
+        message = "Use createDriver(filePath: String) instead to open databases directly without copying",
+        replaceWith = ReplaceWith("createDriver(filePath)"),
+        level = DeprecationLevel.WARNING,
+    )
     @OptIn(ExperimentalForeignApi::class)
     public actual fun createDriver(
         name: String?,
         replaceDatabase: Boolean,
         completionHandler: (Boolean) -> Unit,
-    ): SqlDriver {
-        return if (name != null) {
+    ): SqlDriver =
+        if (name != null) {
             val fileManager = NSFileManager.defaultManager
             val documentsPath =
                 NSSearchPathForDirectoriesInDomains(
@@ -84,7 +93,7 @@ public actual class DriverFactory(
                 completionHandler(false)
             }
 
-            return LogSqliteDriver(
+            LogSqliteDriver(
                 sqlDriver =
                     NativeSqliteDriver(
                         schema = BibleDatabase.Schema,
@@ -109,6 +118,39 @@ public actual class DriverFactory(
             ) { text ->
                 logBlock?.let { it(text) }
             }
+        }
+
+    /**
+     * Creates a database driver from a direct file path.
+     * Opens the database directly without copying.
+     */
+    public actual fun createDriver(filePath: String): SqlDriver {
+        // Split the file path into directory and filename
+        // DatabaseConfiguration.name cannot contain path separators, so we use basePath for the directory
+        val lastSeparator = filePath.lastIndexOf('/')
+        val (directory, filename) =
+            if (lastSeparator != -1) {
+                filePath.substring(0, lastSeparator) to filePath.substring(lastSeparator + 1)
+            } else {
+                null to filePath
+            }
+
+        return LogSqliteDriver(
+            sqlDriver =
+                NativeSqliteDriver(
+                    DatabaseConfiguration(
+                        name = filename,
+                        version = BibleDatabase.Schema.version.toInt(),
+                        create = { con -> wrapConnection(con) { BibleDatabase.Schema.create(it) } },
+                        inMemory = false,
+                        extendedConfig =
+                            DatabaseConfiguration.Extended(
+                                basePath = directory,
+                            ),
+                    ),
+                ),
+        ) { text ->
+            logBlock?.let { it(text) }
         }
     }
 }

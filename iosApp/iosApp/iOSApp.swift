@@ -5,12 +5,18 @@ import SwiftUI
 struct iOSApp: App {
     // MARK: - Properties
     @Bindable var viewModel = SearchViewModel(
-        bibleProvider: BibleProvider.companion.create(
-            dbFactory: BibleDatabaseFactory(
-                replaceDatabase: false,
-                completionHandler: {}
+        bibleProvider: {
+            // Get the bible.db path from the app bundle
+            guard let dbPath = Bundle.main.path(forResource: "bible", ofType: "db") else {
+                fatalError("bible.db not found in bundle")
+            }
+
+            // Initialize BibleProvider with the new filePath API
+            return BibleProvider.companion.create(
+                dbFactory: BibleDatabaseFactory(),
+                filePath: dbPath
             )
-        )
+        }()
     )
 
     // MARK: - Body

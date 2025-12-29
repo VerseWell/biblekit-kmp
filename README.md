@@ -62,14 +62,10 @@ If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a 
 ### Kotlin (Android)
 
 ```kotlin
-// Initialize
-val provider = BibleProvider.create(
-    dbFactory = BibleDatabaseFactory(
-        context = applicationContext,
-        replaceDatabase = false,
-        completionHandler = {}
-    )
-)
+// Initialize from direct file path
+val factory = BibleDatabaseFactory(context = applicationContext)
+val database = factory.create(filePath = "/path/to/bible.db")
+val provider = BibleProvider.create(database = database)
 
 // Search
 val results = provider.search(
@@ -81,13 +77,10 @@ val results = provider.search(
 ### Swift (iOS/macOS)
 
 ```swift
-// Initialize
-let provider = BibleProvider.create(
-    dbFactory: BibleDatabaseFactory(
-        replaceDatabase: false,
-        completionHandler: {}
-    )
-)
+// Initialize from direct file path
+let factory = BibleDatabaseFactory()
+let database = factory.create(filePath: "/path/to/bible.db")
+let provider = BibleProvider.create(database: database)
 
 // Search
 let results = try await provider.search(
