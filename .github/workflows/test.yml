@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -61,7 +61,7 @@ jobs:
         run: ./gradlew :androidApp:assembleRelease --stacktrace
 
   build-ios:
-    runs-on: macos-15
+    runs-on: macos-26
     needs: build
     steps:
       - name: Checkout code
