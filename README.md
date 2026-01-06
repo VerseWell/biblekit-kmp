@@ -1,6 +1,6 @@
 # BibleKit KMP
 
-[![Kotlin](https://img.shields.io/badge/kotlin-2.2.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.3.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-orange.svg?logo=kotlin)](https://kotlinlang.org/docs/multiplatform.html)
 [![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Documentation](https://img.shields.io/badge/docs-dokka-green)](https://versewell.github.io/biblekit-kmp)
@@ -54,6 +54,7 @@ If you prefer using native Swift instead of Kotlin Multiplatform, we maintain a 
 
 > [!IMPORTANT]
 > Your app must include a file named `bible.db` in its bundle. This SQLite database file contains the Bible content and is required for the library to function. You can find:
+>
 > - Example database file: [bible.db](androidApp/src/main/assets/bible.db) (World English Bible with [translation modifications](#bible-translation))
 > - Database schema: [database.sq](biblekit-db/src/commonMain/sqldelight/com/aarkaystudio/biblekitdb/database.sq)
 >
@@ -112,8 +113,9 @@ For detailed API documentation, visit [BibleKit KMP Documentation](https://verse
 
 ## Bible Translation
 
-The example database included with BibleKit uses the **World English Bible** translation (Protestant, US English) with **modifications**. 
-- You can visit the [official WEB page](https://ebible.org/find/show.php?id=engwebp) for more information about this translation. 
+The example database included with BibleKit uses the **World English Bible** translation (Protestant, US English) with **modifications**.
+
+- You can visit the [official WEB page](https://ebible.org/find/show.php?id=engwebp) for more information about this translation.
 - For details regarding the modifications we've made to the WEB translation in our database, please refer to our [Translation Modifications documentation](https://versewell.github.io/translation#translation-modifications).
 
 ## License
