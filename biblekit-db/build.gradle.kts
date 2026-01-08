@@ -46,6 +46,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.sqldelight.android)
+            implementation(libs.osmerion.sqlite.android)
         }
 
         androidUnitTest.dependencies {
@@ -87,7 +88,7 @@ sqldelight {
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.1.2")
+    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.2.0")
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
