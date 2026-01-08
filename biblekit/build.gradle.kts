@@ -91,7 +91,7 @@ listOf(
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.1.2")
+    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.2.0")
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()

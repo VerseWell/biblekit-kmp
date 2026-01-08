@@ -3,24 +3,22 @@
 
 import PackageDescription
 
-/**
- * Swift Package Manager manifest for BibleKit KMP
- * 
- * This package provides Bible-related functionality for iOS and macOS platforms
- * through a pre-built XCFramework distributed via GitHub releases.
- */
+/// Swift Package Manager manifest for BibleKit KMP
+///
+/// This package provides Bible-related functionality for iOS and macOS platforms
+/// through a pre-built XCFramework distributed via GitHub releases.
 let package = Package(
     name: "BibleKit",
     platforms: [
         .iOS(.v13),
-        .macOS(.v10_15)
+        .macOS(.v10_15),
     ],
     products: [
         // Main library product exposing BibleKit functionality
         .library(
             name: "BibleKit",
             targets: ["BibleKit"]
-        ),
+        )
     ],
     dependencies: [
         // No external dependencies required
@@ -30,8 +28,8 @@ let package = Package(
         .binaryTarget(
             name: "BibleKit",
             url:
-                "https://github.com/VerseWell/biblekit-kmp/releases/download/0.1.2/BibleKit.xcframework.zip",
-            checksum: "4eac83e05be05b4b55f5867753cc2991bb74d98456c03e4cdbd729eb69d64712"
+                "https://github.com/VerseWell/biblekit-kmp/releases/download/0.2.0/BibleKit.xcframework.zip",
+            checksum: "bcff5cfd802b2a6c2539e2bf376efbd90a55cdc2a18381ecc45c009975a8343e"
         )
     ]
-) 
+)

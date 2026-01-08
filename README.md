@@ -28,7 +28,7 @@ BibleKit KMP is a Kotlin Multiplatform library that provides Bible-related funct
 
 ```kotlin
 dependencies {
-    implementation("com.aarkaystudio.biblekit:biblekit:0.1.2")
+    implementation("com.aarkaystudio.biblekit:biblekit:0.2.0")
 }
 ```
 
@@ -38,7 +38,7 @@ Add the following to your Package.swift file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.1.2")
+    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.2.0")
 ]
 ```
 
