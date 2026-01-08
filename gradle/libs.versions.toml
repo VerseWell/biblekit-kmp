@@ -6,10 +6,12 @@ android-targetSdk = "34"
 kotlin = "2.3.0"
 kotlinx = "1.10.2"
 sqldelight = "2.2.1"
+osmerion-sqlite = "0.7.0"
 
 [libraries]
 # Database & Storage (SQLDelight)
 sqldelight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
+osmerion-sqlite-android = { module = "com.osmerion.sqlite.android:sqlite-android", version.ref = "osmerion-sqlite" }
 sqldelight-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
 sqldelight-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }

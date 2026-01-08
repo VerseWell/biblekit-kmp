@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.ContextWrapper
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
+import com.osmerion.android.database.sqlite.OsmerionSQLiteOpenHelperFactory
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -45,7 +46,13 @@ public actual class DriverFactory(
         }
 
         return LogSqliteDriver(
-            sqlDriver = AndroidSqliteDriver(BibleDatabase.Schema, context, dbName),
+            sqlDriver =
+                AndroidSqliteDriver(
+                    schema = BibleDatabase.Schema,
+                    context = context,
+                    name = dbName,
+                    factory = OsmerionSQLiteOpenHelperFactory(),
+                ),
         ) { text ->
             logBlock?.let { it(text) }
         }
@@ -68,6 +75,7 @@ public actual class DriverFactory(
                     schema = BibleDatabase.Schema,
                     context = customContext,
                     name = fileName,
+                    factory = OsmerionSQLiteOpenHelperFactory(),
                 ),
         ) { text ->
             logBlock?.let { it(text) }

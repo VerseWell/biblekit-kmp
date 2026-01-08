@@ -63,8 +63,8 @@ internal class VerseDataSource(
         // Execute the search query with ID range and text, then map results
         val query =
             queries.getAllVersesInRangeAndText(
-                id = VerseEntity(id = startVerse, text = "").key,
-                id_ = VerseEntity(id = endVerse, text = "").key,
+                startId = VerseEntity(id = startVerse, text = "").key,
+                endId = VerseEntity(id = endVerse, text = "").key,
                 searchText = text,
                 limit = limit,
                 offset = offset,
