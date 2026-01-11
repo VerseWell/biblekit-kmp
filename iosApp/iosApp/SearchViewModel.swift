@@ -1,4 +1,4 @@
-@preconcurrency import BibleKit
+import BibleKit
 import SwiftUI
 
 @MainActor
