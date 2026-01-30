@@ -78,3 +78,25 @@ jobs:
 
       - name: Build iOS app
         run: xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -configuration Release build CODE_SIGNING_ALLOWED=NO
+
+  build-xcframework:
+    runs-on: macos-26
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "adopt"
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build XCFramework
+        run: ./scripts/xcframework
+
+      - name: Verify XCFramework with Swift Package
+        run: swift build --package-path swift-package
