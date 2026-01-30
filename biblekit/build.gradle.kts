@@ -4,13 +4,13 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
     alias(libs.plugins.skie)
     alias(libs.plugins.kover)
     alias(libs.plugins.dokka)
-    alias(libs.plugins.binaryCompatibilityValidator)
+    alias(libs.plugins.binary.compatibility.validator)
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
@@ -45,13 +45,13 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your multiplatform dependencies here
-            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.coroutines.core)
             implementation(projects.biblekitDb)
         }
 
         commonTest.dependencies {
             implementation(libs.kotlin.test)
-            implementation(libs.kotlinx.coroutines.test)
+            implementation(libs.coroutines.test)
         }
     }
 }
@@ -91,7 +91,7 @@ listOf(
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.2.0")
+    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.2.1")
 
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
