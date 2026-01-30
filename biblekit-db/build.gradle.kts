@@ -46,7 +46,7 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.sqldelight.android)
-            implementation(libs.osmerion.sqlite.android)
+            implementation(libs.sqlite.android)
         }
 
         androidUnitTest.dependencies {
