@@ -1,4 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -90,7 +89,7 @@ sqldelight {
 mavenPublishing {
     coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.2.1")
 
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral()
     signAllPublications()
 
     pom {
