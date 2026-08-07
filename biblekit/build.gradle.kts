@@ -90,7 +90,7 @@ listOf(
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.2.1")
+    coordinates("com.aarkaystudio.biblekit", "biblekit", "0.2.2")
 
     publishToMavenCentral()
     signAllPublications()

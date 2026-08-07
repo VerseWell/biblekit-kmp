@@ -87,7 +87,7 @@ sqldelight {
 }
 
 mavenPublishing {
-    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.2.1")
+    coordinates("com.aarkaystudio.biblekit", "biblekit-db", "0.2.2")
 
     publishToMavenCentral()
     signAllPublications()
