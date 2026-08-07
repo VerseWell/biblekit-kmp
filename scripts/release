@@ -22,10 +22,10 @@ echo "Updating README.md version from $LATEST_TAG to $VERSION..."
 sed -i '' "s/$LATEST_TAG/$VERSION/g" README.md
 
 echo "Updating CHANGELOG.md..."
-./scripts/update-changelog.sh "$VERSION"
+./scripts/update-changelog "$VERSION"
 
 echo "Updating documentation..."
-./scripts/update-docs.sh
+./scripts/update-docs
 
 echo "Committing version update and updated docs..."
 git add .

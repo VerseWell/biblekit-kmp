@@ -1,6 +1,6 @@
 # BibleKit KMP
 
-[![Kotlin](https://img.shields.io/badge/kotlin-2.3.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.4.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin-Multiplatform-orange.svg?logo=kotlin)](https://kotlinlang.org/docs/multiplatform.html)
 [![Maven Central](https://img.shields.io/maven-central/v/com.aarkaystudio.biblekit/biblekit)](https://central.sonatype.com/artifact/com.aarkaystudio.biblekit/biblekit)
 [![Documentation](https://img.shields.io/badge/docs-dokka-green)](https://versewell.github.io/biblekit-kmp)
@@ -18,7 +18,7 @@ BibleKit KMP is a Kotlin Multiplatform library that provides Bible-related funct
 
 ## Requirements
 
-- Android: minSdk 24+
+- Android: minSdk 26+
 - iOS: 13.0+
 - macOS: 10.15+
 
@@ -28,7 +28,7 @@ BibleKit KMP is a Kotlin Multiplatform library that provides Bible-related funct
 
 ```kotlin
 dependencies {
-    implementation("com.aarkaystudio.biblekit:biblekit:0.2.1")
+    implementation("com.aarkaystudio.biblekit:biblekit:0.2.2")
 }
 ```
 
@@ -38,7 +38,7 @@ Add the following to your Package.swift file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.2.1")
+    .package(url: "https://github.com/VerseWell/biblekit-kmp.git", from: "0.2.2")
 ]
 ```
 
