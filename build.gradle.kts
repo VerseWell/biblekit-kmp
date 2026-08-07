@@ -19,3 +19,8 @@ allprojects {
     group = "com.aarkaystudio.biblekit"
     version = "0.2.2"
 }
+
+dependencies {
+    dokka(project(":biblekit"))
+    dokka(project(":biblekit-db"))
+}
